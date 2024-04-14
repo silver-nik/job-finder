@@ -1,0 +1,55 @@
+.app {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 2px solid black;
+    }
+    &__title {
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 37px;
+    }
+    &__menu {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            gap: 30px;
+            li {
+
+                a {
+                    color: #0D1322;
+                }
+
+
+                &.upload-btn {
+                    background: linear-gradient(white, white) padding-box,
+                                linear-gradient(to right, red, purple) border-box;
+                    border-radius: 1000px;
+                    border: 2px solid transparent;
+                    padding: 10px 30px;
+                }
+
+
+            }
+        }
+    }
+    &__log {
+        gap: 30px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        .employers-btn {
+            border-radius: 1000px;
+            background: #0D1322;;
+            padding: 10px 30px;
+            line-height: 32px;
+            color: #fff;
+        }
+    }
+}

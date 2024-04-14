@@ -1,0 +1,8 @@
+.search-page {
+    flex-direction: column;
+
+    &__search {
+        width: 100%;
+        max-width: 600px;
+    }
+}

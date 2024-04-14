@@ -1,0 +1,31 @@
+.main-page {
+    &__title-block {
+
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .title-block__title {
+            color: purple;
+        }
+
+        span:not(.title-block__title){
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+
+    &__form-block {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+}

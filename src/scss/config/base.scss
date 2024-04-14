@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+button {
+    cursor: pointer;
+    user-select: none;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+}
+
+a {
+    text-decoration: none;
+    user-select: none;
+    color: inherit;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #0D1322;
+    position: relative;
+}
+
+input[type="button"], button, a {
+    outline: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+section {
+    padding-top: 32px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-column {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.container {
+    width: 1360px;
+    margin: 0 auto;
+}
+
+
+.p-relavtive {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.scrollbar-hidden {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+
+// color 
+
+.__headerBlue-color {
+    color: #3971FF !important;
+}
+
+.muted {
+    color: #A4A7B0;
+}
+
+.text-bold {
+    font-weight: 600 !important;
+}
+
+.rounded {
+    border-radius: 1000px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
