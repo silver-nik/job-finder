@@ -22,7 +22,7 @@ const AppHeader = () => {
                         style={({ isActive }) =>
                             isActive ? {} : undefined
                         }
-                    to="/comics">Careers advice</NavLink></li>
+                    to="/blog">Careers advice</NavLink></li>
                     <li className="upload-btn">
 
                         <NavLink
@@ -39,7 +39,7 @@ const AppHeader = () => {
                     style={({ isActive }) =>
                         isActive ? {} : undefined
                     }
-                to="/">Sign in</NavLink>
+                to="/login/">Sign in</NavLink>
                 <NavLink
                     className='employers-btn'
                     style={({ isActive }) =>
