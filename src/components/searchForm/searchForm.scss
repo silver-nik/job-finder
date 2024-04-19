@@ -4,6 +4,8 @@
     height: 100%;
     position: relative;
     padding: 30px 20px;
+    border: 1px solid;
+    border-radius: 20px;
 
     .search-header, .search-wrapper {
         display: flex;

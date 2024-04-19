@@ -1,6 +1,6 @@
 class Services {
 
-    baseUrl = 'https://fakestoreapi.com';
+    baseUrl = 'http://localhost:3000';
 
     getResources = async (url) => {
         const res = await fetch(url);
@@ -12,10 +12,17 @@ class Services {
         return await res.json();
     } 
 
-    getAllVacany = async (type = 'all', location = 'all') => {
-        const res = await this.getResources(`${this.baseUrl}/vacancy?type=${type}?location=${location}`)
+    getAllVacany = async (title, location, employment, limit) => {
 
-        return res;
+        const res = await this.getResources(`${this.baseUrl}/jobs?title_like=${title}&location_like=${location}&employment_type_like=${employment}`)
+
+        return await res;
+    }
+
+    getFilters = async () => {
+        const res = await this.getResources(`${this.baseUrl}/filters`)
+
+        return await res;
     }
 
 }

@@ -2,12 +2,8 @@ import { useState } from 'react';
 import './vacancyCard.scss';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import { CardActionArea } from '@mui/material';
 import List from '@mui/material/List';
@@ -20,36 +16,36 @@ import FolderIcon from '@mui/icons-material/Folder';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-const VacanyCard = ({}) => {
-    const el = 'el';
+const VacanyCard = ({id, title, description, location, time}) => {
 
     return (
         
-        <Card sx={{ maxWidth: 700 }}>
+        <Card sx={{ maxWidth: 700,  border: '1px solid' }} data-id={id}>
             <CardActionArea>
                 <CardContent>
-                    <Box gutterBottom sx={{ display: 'flex' }}>
+                    <Box gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: '10px', mb: '12px' }}>
                         <Avatar>
                             R
                         </Avatar>
                         <Typography variant="h6" component="h6">
-                            Middle Backend Developer
+                            {title}
                         </Typography>
                     </Box>
                     <Typography variant="body1" component="body1">
                     <List  sx={{ display: 'flex', p: 0, pb: 2, gap: '20px' }}>
-                        <ListItem sx={{ display: 'flex', p: 0, alignItems: 'center', width: 'fit-content' }}>
+                        <ListItem sx={{ display: 'flex', p: 0, alignItems: 'center', width: 'fit-content' }} key={id}>
                             <ListItemText
                                 primary={
                                     <>
                                       <Typography
-                                        sx={{ display: 'flex', p: 0, alignItems: 'center', width: 'fit-content', fontSize: '12px' }}
+                                        sx={{ display: 'flex', p: 0, alignItems: 'center', width: 'fit-content', fontSize: '12px', textTransform: 'capitalize' }}
                                         component="span"
                                         variant="body2"
                                         color="primary"
                                       >
                                         <PlaceIcon/>
-                                        Ambler, Pennsylvania, US
+                                        {/* Ambler, Pennsylvania, US */}
+                                        {location}
                                       </Typography>
                                     </>
                                   }
@@ -83,7 +79,9 @@ const VacanyCard = ({}) => {
                                         color="primary"
                                       >
                                         <AccessTimeIcon/>
-                                        Opened 11 days ago
+                                        {
+                                            time == 'part_time' ? 'Part time' : time
+                                        }
                                       </Typography>
                                     </>
                                   }
@@ -109,8 +107,9 @@ const VacanyCard = ({}) => {
                     </List>
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
+                        {/* Lizards are a widespread group of squamate reptiles, with over 6,000
+                        species, ranging across all continents except Antarctica */}
+                        {description}
                     </Typography>
                 </CardContent>
             </CardActionArea>

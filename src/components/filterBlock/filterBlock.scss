@@ -1,0 +1,33 @@
+.filter-block {
+    padding-bottom: 25px;
+    width: auto;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    
+    
+    &__options {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-transform: capitalize;
+                color: #bdbdbd;
+                font-size: 14px;
+            }
+
+        }
+    }
+
+}

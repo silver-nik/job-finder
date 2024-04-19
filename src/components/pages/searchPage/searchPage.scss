@@ -5,4 +5,18 @@
         width: 100%;
         max-width: 600px;
     }
+
+    &__wrapper {
+        padding-top: 32px;
+    }
+
+    &__filters {
+        width: 240px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }

@@ -8,7 +8,7 @@ import './searchForm.scss';
 import { Link } from 'react-router-dom';
 
 const options = [
-    { label: "", value: "all" },
+    { label: "", value: "" },
     { label: "Computer Programmer", value: "Computer_programmer" },
     { label: "Web Developer", value: "web_developer" },
     { label: "User Experience Designer", value: "user_experience_designer" },
@@ -18,7 +18,7 @@ const options = [
 
 const FormSearch = () => {
 
-    const [searchRequest, setSearchRequest] = useState('all');
+    const [searchRequest, setSearchRequest] = useState('');
     const [searchLoaction, setSearchLocation] = useState(options[0]);
 
 
@@ -63,7 +63,7 @@ const FormSearch = () => {
                             sx={{ width: 300 }}
                             renderInput={(params) => <TextField {...params} label="Location" />}
                         />
-                        <Link to={`/search/vacancy?type=${searchRequest}&location=${searchLoaction.value}`}>
+                        <Link to={`/search/vacancy?title_like=${searchRequest}&location_like=${searchLoaction.value}`}>
                             <button 
                                 type='submit' 
                                 className="button button__main"
