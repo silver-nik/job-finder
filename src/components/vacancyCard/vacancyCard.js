@@ -20,7 +20,7 @@ const VacanyCard = ({id, title, description, location, time}) => {
 
     return (
         
-        <Card sx={{ maxWidth: 700,  border: '1px solid' }} data-id={id}>
+        <Card sx={{ maxWidth: 700,  border: '1px solid', borderRadius: '20px' }} data-id={id}>
             <CardActionArea>
                 <CardContent>
                     <Box gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: '10px', mb: '12px' }}>
