@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Skeleton from '@mui/material/Skeleton';
 
 import TuneIcon from '@mui/icons-material/Tune';
 
@@ -24,6 +25,7 @@ const SearchPage = () => {
 
     const [arr, setArr] = useState([]);
     const [filters, setFilters] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const [searchInput, setSearchInput] = useState('');
     const [searchFilters, setSearchFilters] = useState({
@@ -46,6 +48,9 @@ const SearchPage = () => {
         newServices.getAllVacany(title, location, employment).then(res => {
             setArr(res);
         })
+        .then(() => setTimeout(() => {
+            setLoading(false)
+        }, 1000))
 
         setSearchInput(title);
 
@@ -117,24 +122,20 @@ const SearchPage = () => {
                 </div>
                 <div className="search-page__list">
 
-                {
-                    arr && arr.length > 0 ? arr.map(item => {
-                        return <VacanyCard id={item.id} title={item.title} description={item.description} location={item.location} time={item.employment_type} />
-                    }) : `Sorry, we haven't vacancies`
-                }
 
-                {
-                    <div className="">
-                        <button className="search-page__list__load-btn" onClick={(e) => {
-                            e.preventDefault();
+                    {
+                        loading ? (
+                            Array.from({length: 3}, (_, i) => (
+                                <Skeleton key={i} variant="rounded" width={698} height={152} />
+                            ))
+                        ) : (
+                            arr && arr.length > 0 ? arr.map(item => (
+                                <VacanyCard id={item.id} title={item.title} description={item.description} location={item.location} time={item.employment_type} />
+                            )) : "Sorry, we haven't vacancies"
+                        )
+                    }
 
-                            // if() {
 
-                            // }
-
-                        }}>load more</button>
-                    </div>
-                }
 
                 </div>
             </div>
