@@ -24,6 +24,7 @@ const AnimatedRoutes = () => {
             {/* {/* <Route path="/comics" element={<ComicsPage/>} className='page' /> */}
             
             {/* <Route path="/search/vacancy/:text/:area" element={<SearchPage/>} className='page' /> */}
+            <Route path="/blog" element={<></>} className='page' />
             <Route path="/search/vacancy" element={<SearchPage/>} className='page' />
             {/* <Route path="/characters/:id" element={<SinglePage Component={SingleCharacterLayout} dataType='character'/>}/>
             <Route path="*" element={<Page404/>}/>
