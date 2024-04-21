@@ -5,6 +5,8 @@ import {Route, Routes, useLocation} from 'react-router-dom';
 // const Page404 = lazy(() => import('../pages/404'));
 const MainPage = lazy(() => import('../pages/mainPage/mainPage'));
 const SearchPage = lazy(() => import('../pages/searchPage/searchPage'));
+const BlogPage = lazy(() => import('../pages/blogPage/blogPage'));
+
 
 // const ComicsPage = lazy(() => import('../pages/ComicsPage'));
 // const SingleComicLayout = lazy(() => import('../pages/singleComicLayout/SingleComicLayout'));
@@ -24,7 +26,7 @@ const AnimatedRoutes = () => {
             {/* {/* <Route path="/comics" element={<ComicsPage/>} className='page' /> */}
             
             {/* <Route path="/search/vacancy/:text/:area" element={<SearchPage/>} className='page' /> */}
-            <Route path="/blog" element={<></>} className='page' />
+            <Route path="/blog" element={<BlogPage/>} className='page' />
             <Route path="/search/vacancy" element={<SearchPage/>} className='page' />
             {/* <Route path="/characters/:id" element={<SinglePage Component={SingleCharacterLayout} dataType='character'/>}/>
             <Route path="*" element={<Page404/>}/>
