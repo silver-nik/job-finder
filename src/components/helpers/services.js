@@ -25,6 +25,20 @@ class Services {
         return await res;
     }
 
+    getListQA = async () => {
+        const res = await this.getResources(`${this.baseUrl}/catalogQA`)
+
+        return await res;
+    }
+
+    getListPerformers = async (serviceId) => {
+        const res = await this.getResources(`${this.baseUrl}/performers`)
+
+        const filteredPerformers = res.filter(performer => performer.servciesId.includes(serviceId));
+
+        return await filteredPerformers;
+    }
+
 }
 
 export default Services;

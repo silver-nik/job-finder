@@ -243,5 +243,63 @@
         "title": "Employment type",
         "options": ["Full time", "Part time"]
       }
+    ],
+
+    "catalogQA": [
+      {
+        "text": "Build a strong CV",
+        "value": 1,
+        "description": "Creating a high-quality resume to attract employers' attention"
+      },
+      {
+        "text": "Rehearse the interview",
+        "value": 2,
+        "description": "Conducting a practice interview to prepare for the real interview"
+      },
+      {
+        "text": "Build a career plan",
+        "value": 3,
+        "description": "Developing a career development plan to set goals and steps to achieve them"
+      },
+      {
+        "text": "Change careers",
+        "value": 4,
+        "description": "Transitioning to a new professional field for new opportunities and satisfaction"
+      },
+      {
+        "text": "Fight burnout",
+        "value": 5,
+        "description": "Combating burnout and work overload to maintain energy and emotional well-being"
+      },
+      {
+        "text": "Change careers",
+        "value": 6,
+        "description": "Reiterating the topic of changing careers, possibly as an important consideration"
+      }
+    ],
+
+    "performers": [
+      {
+          "first_name": "John",
+          "last_name": "Doe",
+          "benefits": "Creativity, Problem-solving skills, Communication skills",
+          "description": "Experienced career coach specializing in building strong CVs.",
+          "servciesId": [1, 3, 6]
+      },
+      {
+          "first_name": "Alice",
+          "last_name": "Smith",
+          "benefits": "Creativity / Problem-solving skills / Communication skills",
+          "description": "Skilled in rehearsing interviews and helping clients fight burnout.",
+          "servciesId": [2, 3, 6]
+      },
+      {
+          "first_name": "Michael",
+          "last_name": "Johnson",
+          "benefits": "Creativity / Problem-solving skills / Communication skills",
+          "description": "Expert in building career plans and guiding clients through career changes.",
+          "servciesId": [4, 5, 6]
+      }
     ]
+
   }
