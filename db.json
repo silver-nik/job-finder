@@ -280,6 +280,7 @@
 
     "performers": [
       {
+          "id": 6242,
           "first_name": "John",
           "last_name": "Doe",
           "benefits": "Creativity, Problem-solving skills, Communication skills",
@@ -287,6 +288,7 @@
           "servciesId": [1, 3, 6]
       },
       {
+          "id": 6204,
           "first_name": "Alice",
           "last_name": "Smith",
           "benefits": "Creativity / Problem-solving skills / Communication skills",
@@ -294,6 +296,7 @@
           "servciesId": [2, 3, 6]
       },
       {
+          "id": 6267,
           "first_name": "Michael",
           "last_name": "Johnson",
           "benefits": "Creativity / Problem-solving skills / Communication skills",

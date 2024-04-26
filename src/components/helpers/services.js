@@ -31,10 +31,10 @@ class Services {
         return await res;
     }
 
-    getListPerformers = async (serviceId) => {
-        const res = await this.getResources(`${this.baseUrl}/performers`)
+    getListPerformers = async (serviceId, performerId = '') => {
+        const res = await this.getResources(`${this.baseUrl}/performers/${performerId}`)
 
-        const filteredPerformers = res.filter(performer => performer.servciesId.includes(serviceId));
+        const filteredPerformers = serviceId ? res.filter(performer => performer.servciesId.includes(serviceId)) : res
 
         return await filteredPerformers;
     }
