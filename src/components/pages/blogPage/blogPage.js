@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 
 import Services from "../../helpers/services";
 
@@ -64,30 +64,39 @@ const BlogPage = () => {
     }
 
     const setPerformerCard = (arr) => {
-        return arr.map(({first_name, last_name, benefits, description}, index) => {
+        return arr.map(({id, first_name, last_name, benefits, description}, index) => {
             return (
-               <div className="d-flex performer-card">
-                    <div className="performer__img">
-                        <img
-                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
-                            srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
-                            loading="lazy"
-                            alt=""
-                        />
+                <Link to={`/blog/${id}?serviceId=${activeIndex}`}>
+                
+                    <div className="d-flex performer-card">
+                        <div className="performer__img">
+                            <img
+                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286"
+                                srcSet="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286&dpr=2 2x"
+                                loading="lazy"
+                                alt=""
+                            />
+                        </div>
+                        <div className="content">
+                            <div className="performer__name d-flex">
+                                {first_name} {last_name}
+                            </div>
+                            <div className="performer__benefits">
+                                {benefits}
+                            </div>
+                            <div className="performer__descr">
+                                {description}
+                            </div>
+                            <button 
+                                type='submit' 
+                                className="button button__main"
+                                disabled={''}>
+                                <div className="inner">Choose a service</div>
+                            </button>
+                        </div>
                     </div>
-                    <div className="content">
-                        <div className="performer__name d-flex">
-                            {first_name} {last_name}
-                        </div>
-                        <div className="performer__benefits">
-                            {benefits}
-                        </div>
-                        <div className="performer__descr">
-                            {description}
-                        </div>
-                        <button>Choose a service</button>
-                    </div>
-               </div>
+                
+                </Link>
             )
         })
     }

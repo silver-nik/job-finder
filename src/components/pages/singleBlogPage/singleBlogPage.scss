@@ -1,0 +1,159 @@
+.mentor-page {
+    display: flex;
+    justify-content: space-around;
+
+    &__descr {
+
+        width: 704px;
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 48px;
+        }
+
+        .secondary-title {
+            font-size: 18px;
+            font-weight: 400;
+            color: #768694;
+        }
+
+        h6 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+    }
+
+    &__about {
+        margin-top: 24px;
+
+        .about-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .about {
+            margin-top: 24px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    &__specialities, &__tasks {
+        margin-top: 24px;
+
+
+        .specialities__list, .tasks__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .specialities__tag-container, .tasks__tag-container {
+            border-radius: 8px;
+            gap: 4px;
+            max-width: 272px;
+            min-height: 20px;
+            padding: 4px 8px;
+            background: #f1f4f9;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            color: #5e6c77;
+        }
+
+        .specialities-tag, .tasks-tag {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+    }
+
+    &__services {
+        margin-top: 24px;
+
+        .services__title {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 40px;
+        }
+
+        .services__list {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .services__item-container {
+            border: 1px solid #dce3eb;
+            border-radius: 24px;
+            width: 100%;
+            padding: 32px;
+
+            .services-item {
+                text-align: left;
+
+                &__title {
+                    font-size: 22px;
+                    font-weight: 600;
+                    line-height: 32px;
+                }
+
+                &__description, &__near-date {
+                    font-size: 16px;
+                    line-height: 26px;
+                    font-weight: 400;
+                }
+
+                .near-date {
+                    font-weight: 600;
+                }
+
+                &__btns {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        font-size: 28px;
+                        font-weight: 600;
+                        line-height: 40px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__photo {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        img {
+            width: 392px;
+            height: 392px;
+            border-radius: 24px;
+        }
+
+    }
+
+    button {
+        border-radius: 1000px;
+        background: #0D1322;
+        padding: 10px 30px;
+        line-height: 32px;
+        color: #fff;
+    }
+
+    
+}
