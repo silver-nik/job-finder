@@ -6,6 +6,8 @@ import {Route, Routes, useLocation} from 'react-router-dom';
 const MainPage = lazy(() => import('../pages/mainPage/mainPage'));
 const SearchPage = lazy(() => import('../pages/searchPage/searchPage'));
 const BlogPage = lazy(() => import('../pages/blogPage/blogPage'));
+const SingleBlogPage = lazy(() => import('../pages/singleBlogPage/singleBlogPage'));
+
 
 
 // const ComicsPage = lazy(() => import('../pages/ComicsPage'));
@@ -26,6 +28,7 @@ const AnimatedRoutes = () => {
             {/* {/* <Route path="/comics" element={<ComicsPage/>} className='page' /> */}
             
             {/* <Route path="/search/vacancy/:text/:area" element={<SearchPage/>} className='page' /> */}
+            <Route path="/blog/:id" element={<SingleBlogPage/>} className='page' />
             <Route path="/blog" element={<BlogPage/>} className='page' />
             <Route path="/search/vacancy" element={<SearchPage/>} className='page' />
             {/* <Route path="/characters/:id" element={<SinglePage Component={SingleCharacterLayout} dataType='character'/>}/>
