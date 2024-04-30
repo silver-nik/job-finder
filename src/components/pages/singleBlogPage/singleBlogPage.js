@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useSearchParams, useParams } from 'react-router-dom';
 
 import Services from "../../helpers/services";
+import ModalServices from "../../modals/modal";
 
 import './singleBlogPage.scss';
+import ServiceCard from "../../serviceCard/serviceCard";
 
 const SingleBlogPage = () => {
 
@@ -15,12 +17,16 @@ const SingleBlogPage = () => {
     const mentorId = searchParams.get("serviceId");
 
     const [mentor, setMentor] = useState({});
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         newServices.getListPerformers('', id)
             .then(res => setMentor(res))
     }, [])
-    
+
+    const closeModal = () => {
+        setShowModal(false);
+    }
 
     return (
         <section className="mentor-page">
@@ -99,35 +105,7 @@ const SingleBlogPage = () => {
                             Services
                         </h3>
                         <div className="services__list">
-                            <div className="services__item-container">
-                                <div className="services-item">
-                                    <h4 className="services-item__title">Career counseling</h4>
-                                    <div className="services-item__description">
-                                        What you get as a result:
-                                        1. We will analyze your current situation and develop a job search strategy exclusively for you.
-                                        2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.
-                                        3. Determine the level of income for which you can qualify.
-                                        4. We'll use multiple job search channels to maximize our "broad" view of the market.
-                                        5. You will get tips on how to quickly get to interviews and competently build a dialog with hr.
-                                        6. Learn to find jobs and companies that match your values and expectations.
-
-                                        Duration - 1 hour, format - video (google meet) or audio at your discretion.
-                                    </div>
-                                    <div className="services-item__near-date">
-                                        Nearest entry
-                                        <span className="near-date">May 3, 2024</span>
-                                    </div>
-                                    <div className="services-item__btns">
-                                        <button 
-                                            type='submit' 
-                                            className="button button__main"
-                                            disabled={''}>
-                                            <div className="inner">Choose a service</div>
-                                        </button>
-                                        <span>100$</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <ServiceCard/>
                         </div>
                     </div>
 
@@ -142,11 +120,16 @@ const SingleBlogPage = () => {
                     <button 
                         type='submit' 
                         className="button button__main"
-                        disabled={''}>
+                        disabled={''}
+                        onClick={(e) => setShowModal(!showModal)}
+                    >
                         <div className="inner">Choose a service</div>
                     </button>
                 </div>
             </div>
+            {
+                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} /> : ''
+            }
         </section>
     )
 

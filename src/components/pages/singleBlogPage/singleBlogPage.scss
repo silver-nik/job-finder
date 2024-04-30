@@ -112,6 +112,33 @@
                     font-weight: 400;
                 }
 
+                &__description {
+                    height: 52px;
+                    overflow: hidden;
+                    margin-top: 20px;
+                    margin-bottom: 8px;
+
+                    &.unfolded {
+                        height: fit-content;
+                    }
+
+                }
+
+                &__link-all {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    display: flex;
+                    margin-bottom: 20px;
+                    color: #0070ff;
+                }
+
+                &__near-date {
+                    margin-bottom: 8px;
+                    display: flex;
+                    gap: 8px;
+                }
+
                 .near-date {
                     font-weight: 600;
                 }
@@ -119,6 +146,7 @@
                 &__btns {
                     display: flex;
                     align-items: center;
+                    gap: 8px;
 
                     span {
                         font-size: 28px;
