@@ -1,31 +1,49 @@
 import { useState, useEffect } from "react";
 import ModalServices from "../modals/modal";
 
+import './serviceCard.scss';
 
-const ServiceCard = () => {
+const ServiceCard = ({content}) => {
 
     const [isUnfold, setIsUnfold] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
 
     const closeModal = () => {
         setShowModal(false);
     }
 
+    const formattingString = (str) => {
+        return str.split('\n').map((line, index) => (
+            <>
+                {line}
+                <br />
+            </>
+        ))
+    }
+
+    const setDate = (dt) => {
+        const date = new Date(dt);
+
+        const day = date.getDate();
+        const monthIndex = date.getMonth();
+        const year = date.getFullYear();
+
+        const formattedDate = `${day} ${months[monthIndex]} ${year}`;
+
+        return formattedDate;
+    }
+    
 
     return (
         <div className="services__item-container">
             <div className="services-item">
-                <h4 className="services-item__title">Career counseling</h4>
-                <div className={`services-item__description ${isUnfold ? 'unfolded' : ''}`}>
-                    What you get as a result:
-                    1. We will analyze your current situation and develop a job search strategy exclusively for you.
-                    2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.
-                    3. Determine the level of income for which you can qualify.
-                    4. We'll use multiple job search channels to maximize our "broad" view of the market.
-                    5. You will get tips on how to quickly get to interviews and competently build a dialog with hr.
-                    6. Learn to find jobs and companies that match your values and expectations.
-
-                    Duration - 1 hour, format - video (google meet) or audio at your discretion.
+                <h4 className="services-item__title">{content.title}</h4>
+                <div className={`services-item__description`}>
+                    {
+                        isUnfold ? formattingString(content.description) : content.shortDescription
+                    }
                 </div>
                 <a href="#" className="services-item__link-all" onClick={(e) => {
                     e.preventDefault();
@@ -33,7 +51,11 @@ const ServiceCard = () => {
                 }}>{isUnfold ? 'fold' : 'unfold'}</a>
                 <div className="services-item__near-date">
                     Nearest entry
-                    <span className="near-date">May 3, 2024</span>
+                    <span className="near-date">
+                        {
+                            setDate(content.nearDate)
+                        }
+                    </span>
                 </div>
                 <div className="services-item__btns">
                     <button 
@@ -44,11 +66,11 @@ const ServiceCard = () => {
                     >
                         <div className="inner">Choose a service</div>
                     </button>
-                    <span>100$</span>
+                    <span>{content.price}$</span>
                 </div>
             </div>
             {
-                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} /> : ''
+                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} content={content} formattingString={formattingString} /> : ''
             }
         </div>
     )
