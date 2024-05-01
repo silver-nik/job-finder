@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import './modal.scss';
 
-const ModalServices = ({showModal, closeModal}) => {
+const ModalServices = ({showModal, closeModal, content, formattingString}) => {
     
 
     return (
@@ -22,11 +22,11 @@ const ModalServices = ({showModal, closeModal}) => {
             <Box className="modal-container">
                 <div className="modal-header">
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
+                        {content.title}
                     </Typography>
                 </div>
                 <div className="modal-body">
-
+                    {formattingString(content.description)}
                 </div>
                 <div className="modal-divider"></div>
                 <div className="modal-footer">
@@ -43,11 +43,16 @@ const ModalServices = ({showModal, closeModal}) => {
                                 </button>
                             </div>
                             <button className="modal-footer__btn">
-                                Pay 100$
+                                Pay {content.price}$
                             </button>
                         </form>
                     </div>
                 </div>
+                <div className="modal-close-btn" onClick={(e) => closeModal()}>
+                    <button type="button">
+                        X
+                    </button>
+                </div>  
             </Box>
         </Modal>
     )
