@@ -39,6 +39,12 @@ class Services {
         return await filteredPerformers;
     }
 
+    getListServices = async (performerId) => {
+        const res = await this.getResources(`${this.baseUrl}/services?mentorID_like=${performerId}`)
+
+        return await res;
+    }
+
 }
 
 export default Services;

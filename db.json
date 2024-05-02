@@ -303,6 +303,58 @@
           "description": "Expert in building career plans and guiding clients through career changes.",
           "servciesId": [4, 5, 6]
       }
+    ],
+    
+
+    "services": [
+        {
+          "mentorID": 6242,
+          "title": "Career counseling",
+          "shortDescription": "Conducting a practice interview to prepare for the real interview...",
+          "description": "What you get as a result:\n\n1. We will analyze your current situation and develop a job search strategy exclusively for you.\n\n2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.\n\n3. Determine the level of income for which you can qualify.\n\n4. We'll use multiple job search channels to maximize our 'broad' view of the market.\n\n5. You will get tips on how to quickly get to interviews and competently build a dialog with HR.\n\n6. Learn to find jobs and companies that match your values and expectations.\n\nDuration - 1 hour, format - video (Google Meet) or audio at your discretion.",
+          "price": 100,
+          "nearDate": "2024-05-12"
+      },
+      {
+        "mentorID": 6242,
+        "title": "Online Language Tutoring",
+        "shortDescription": "Helping you improve your language skills through personalized lessons...",
+        "description": "What you get as a result:\n\n1. We will analyze your current situation and develop a job search strategy exclusively for you.\n\n2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.\n\n3. Determine the level of income for which you can qualify.\n\n4. We'll use multiple job search channels to maximize our 'broad' view of the market.\n\n5. You will get tips on how to quickly get to interviews and competently build a dialog with HR.\n\n6. Learn to find jobs and companies that match your values and expectations.\n\nDuration - 1 hour, format - video (Google Meet) or audio at your discretion.",
+        "price": 30,
+        "nearDate": "2024-09-20"
+      },
+      {
+        "mentorID": 6204,
+        "title": "Fitness Coaching",
+        "shortDescription": "Helping you improve your language skills through personalized lessons...",
+        "description": "What you get as a result:\n\n1. We will analyze your current situation and develop a job search strategy exclusively for you.\n\n2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.\n\n3. Determine the level of income for which you can qualify.\n\n4. We'll use multiple job search channels to maximize our 'broad' view of the market.\n\n5. You will get tips on how to quickly get to interviews and competently build a dialog with HR.\n\n6. Learn to find jobs and companies that match your values and expectations.\n\nDuration - 1 hour, format - video (Google Meet) or audio at your discretion.",
+        "price": 25,
+        "nearDate": "2024-10-15"
+      },
+      {
+        "mentorID": 6204,
+        "title": "Website Design Consultation",
+        "shortDescription":"Expert guidance on creating a visually appealing and user-friendly website...",
+        "description": "What you get as a result:\n\n1. We will analyze your current situation and develop a job search strategy exclusively for you.\n\n2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.\n\n3. Determine the level of income for which you can qualify.\n\n4. We'll use multiple job search channels to maximize our 'broad' view of the market.\n\n5. You will get tips on how to quickly get to interviews and competently build a dialog with HR.\n\n6. Learn to find jobs and companies that match your values and expectations.\n\nDuration - 1 hour, format - video (Google Meet) or audio at your discretion.",
+        "price": 80,
+        "nearDate": "2024-06-10"
+      },
+      {
+        "mentorID": 6267,
+        "title": "Financial Planning Session",
+        "shortDescription": "Personalized financial advice to help you achieve your short and long-term goals...",
+        "description": "What you get as a result:\n\n1. We will analyze your current situation and develop a job search strategy exclusively for you.\n\n2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.\n\n3. Determine the level of income for which you can qualify.\n\n4. We'll use multiple job search channels to maximize our 'broad' view of the market.\n\n5. You will get tips on how to quickly get to interviews and competently build a dialog with HR.\n\n6. Learn to find jobs and companies that match your values and expectations.\n\nDuration - 1 hour, format - video (Google Meet) or audio at your discretion.",
+        "price": 120,
+        "nearDate": "2024-05-30"
+      },
+      {
+        "mentorID": 6267,
+        "title": "Financial Planning Session",
+        "shortDescription": "Personalized financial advice to help you achieve your short and long-term goals...",
+        "description": "What you get as a result:\n\n1. We will analyze your current situation and develop a job search strategy exclusively for you.\n\n2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.\n\n3. Determine the level of income for which you can qualify.\n\n4. We'll use multiple job search channels to maximize our 'broad' view of the market.\n\n5. You will get tips on how to quickly get to interviews and competently build a dialog with HR.\n\n6. Learn to find jobs and companies that match your values and expectations.\n\nDuration - 1 hour, format - video (Google Meet) or audio at your discretion.",
+        "price": 120,
+        "nearDate": "2024-05-30"
+      }
     ]
 
   }
