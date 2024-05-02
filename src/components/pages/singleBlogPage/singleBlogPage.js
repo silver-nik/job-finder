@@ -17,30 +17,6 @@ const SingleBlogPage = () => {
     const [mentorServices, setMentorServices] = useState({});
     const [showModal, setShowModal] = useState(false);
 
-    const servcieContent = {
-        title: "Career counseling",
-        shortDescription: `Conducting a practice interview to prepare for the real interview...`,
-        description: 
-        `   What you get as a result:
-
-            1. We will analyze your current situation and develop a job search strategy exclusively for you.
-
-            2. We will formulate the name of the future position, which will characterize all your experience and expertise as accurately as possible.
-
-            3. Determine the level of income for which you can qualify.
-
-            4. We'll use multiple job search channels to maximize our "broad" view of the market.
-
-            5. You will get tips on how to quickly get to interviews and competently build a dialog with hr.
-
-            6. Learn to find jobs and companies that match your values and expectations.
-
-
-            Duration - 1 hour, format - video (google meet) or audio at your discretion.
-        `,
-        price: 100,
-        nearDate: "2024-05-12"
-    }
 
     useEffect(() => {
         newServices.getListPerformers('', id)
