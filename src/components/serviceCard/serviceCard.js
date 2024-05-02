@@ -1,48 +1,27 @@
 import { useState, useEffect } from "react";
 import ModalServices from "../modals/modal";
 
+import ContentFormmating from "../helpers/contentFormmating";
 import './serviceCard.scss';
 
-const ServiceCard = ({content}) => {
+const ServiceCard = ({index, content}) => {
 
     const [isUnfold, setIsUnfold] = useState(false);
     const [showModal, setShowModal] = useState(false);
-    const months = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
+
+    const contentFormat = new ContentFormmating();
 
     const closeModal = () => {
         setShowModal(false);
     }
 
-    const formattingString = (str) => {
-        return str.split('\n').map((line, index) => (
-            <>
-                {line}
-                <br />
-            </>
-        ))
-    }
-
-    const setDate = (dt) => {
-        const date = new Date(dt);
-
-        const day = date.getDate();
-        const monthIndex = date.getMonth();
-        const year = date.getFullYear();
-
-        const formattedDate = `${day} ${months[monthIndex]} ${year}`;
-
-        return formattedDate;
-    }
-    
-
     return (
-        <div className="services__item-container">
+        <div className="services__item-container" key={index}>
             <div className="services-item">
                 <h4 className="services-item__title">{content.title}</h4>
                 <div className={`services-item__description`}>
                     {
-                        isUnfold ? formattingString(content.description) : content.shortDescription
+                        isUnfold ? contentFormat.formattingString(content.description) : content.shortDescription
                     }
                 </div>
                 <a href="#" className="services-item__link-all" onClick={(e) => {
@@ -53,7 +32,7 @@ const ServiceCard = ({content}) => {
                     Nearest entry
                     <span className="near-date">
                         {
-                            setDate(content.nearDate)
+                            contentFormat.formattingDate(content.nearDate)
                         }
                     </span>
                 </div>
@@ -70,7 +49,7 @@ const ServiceCard = ({content}) => {
                 </div>
             </div>
             {
-                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} content={content} formattingString={formattingString} /> : ''
+                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} content={content} /> : ''
             }
         </div>
     )
