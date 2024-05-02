@@ -14,6 +14,7 @@ const SingleBlogPage = () => {
     const { id } = useParams();
 
     const [mentor, setMentor] = useState({});
+    const [mentorServices, setMentorServices] = useState({});
     const [showModal, setShowModal] = useState(false);
 
     const servcieContent = {
@@ -34,7 +35,7 @@ const SingleBlogPage = () => {
 
             6. Learn to find jobs and companies that match your values and expectations.
 
-            
+
             Duration - 1 hour, format - video (google meet) or audio at your discretion.
         `,
         price: 100,
@@ -44,6 +45,9 @@ const SingleBlogPage = () => {
     useEffect(() => {
         newServices.getListPerformers('', id)
             .then(res => setMentor(res))
+
+        newServices.getListServices(id)
+            .then(res => setMentorServices(res))
     }, [])
 
     const closeModal = () => {
@@ -128,9 +132,7 @@ const SingleBlogPage = () => {
                         </h3>
                         <div className="services__list">
                             {
-                                Array.from({ length: 3 }, (_, index) => (
-                                    <ServiceCard key={index} content={servcieContent}/>
-                                ))
+                                mentorServices.length > 0 ? mentorServices.map((el, index) => <ServiceCard key={index} index={index} content={el}/>) : ''
                             }
                         </div>
                     </div>
@@ -149,12 +151,12 @@ const SingleBlogPage = () => {
                         disabled={''}
                         onClick={(e) => setShowModal(!showModal)}
                     >
-                        <div className="inner">Choose a service</div>
+                        <div className="inner">Choose a services</div>
                     </button>
                 </div>
             </div>
             {
-                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} /> : ''
+                showModal ? <ModalServices showModal={showModal} closeModal={closeModal} content={mentorServices} /> : ''
             }
         </section>
     )
