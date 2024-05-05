@@ -72,6 +72,12 @@
 
         }
 
+        .panel {
+            &.Mui-expanded {
+                border: 1px solid #0070ff;
+            }
+        }
+
     }
 
     .modal-divider {
@@ -118,6 +124,26 @@
                 font-size: 16px;
                 font-weight: 600;
                 line-height: 32px;
+            }
+
+            .modal-footer__promocode-input {
+                position: relative;
+
+                .submit-btn {
+                    background: none;
+                    position: absolute;
+                    right: 16px;
+                    top: 15px;
+                    height: 24px;
+
+                    &:hover {
+                        svg {
+                            fill: #0070ff;
+                        }
+                    }
+
+                }
+
             }
 
             input {

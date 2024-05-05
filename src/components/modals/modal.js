@@ -10,6 +10,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import './modal.scss';
 import ContentFormmating from "../helpers/contentFormmating";
@@ -17,12 +18,24 @@ import ContentFormmating from "../helpers/contentFormmating";
 const ModalServices = ({showModal, closeModal, content}) => {
 
     const [isArray, setIsArray] = useState(false);
-    const [expanded, setExpanded] = useState();
+    const [expanded, setExpanded] = useState(0);
     const [expandedPromocode, setExpandedPromocode] = useState(false);
     const [currentService, setCurrentService] = useState({});
-
+    const [promocode, setPromocode] = useState('');
+    const [discountApplied, setDiscountApplied] = useState(false);
 
     const contentFormat = new ContentFormmating();
+
+    useEffect(() => {
+
+        if (Array.isArray(content)) {
+            setIsArray(true);
+            setCurrentService(content[0]);
+        } else {
+            setIsArray(false);
+        }
+
+    }, []);
 
     const handleChange = (panel, item) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
@@ -30,18 +43,13 @@ const ModalServices = ({showModal, closeModal, content}) => {
         newExpanded ? setCurrentService(item) : setCurrentService({});
     };
 
-    useEffect(() => {
-        
-        Array.isArray(content) ? setIsArray(true) : setIsArray(false);
-
-    }, []);
-
-    const togglePromocodeWrapper = () => {
-
-    }
-
     const setFragment = (item, index) => {
-        return  <Accordion expanded={expanded === index} onChange={handleChange(index, item)}>
+        return  <Accordion 
+                    expanded={
+                        expanded === index
+                    } 
+                    className="panel"
+                    onChange={handleChange(index, item)}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2-content"
@@ -70,11 +78,22 @@ const ModalServices = ({showModal, closeModal, content}) => {
                 </Accordion>
     }
 
-    const setBodyData = (content) => {
+    const setDiscount = () => {
+        const defaultDiscount = 'QWE123';
 
-        return Array.isArray(content) ? content.map((item, index) => {
-                    return setFragment(item, index);
-                }) : contentFormat.formattingString(content.description)
+        promocode === defaultDiscount ? setDiscountApplied(true) : setDiscountApplied(false)
+    }
+
+    const calculatePrice = () => {
+        return discountApplied ? (isArray ? currentService.price * 0.8 : content.price * 0.8) : (isArray ? currentService.price : content.price);
+    };
+
+    const setBodyData = (content) => {
+        return Array.isArray(content) ? 
+            
+            content.map((item, index) => {
+                return setFragment(item, index);
+            }) : contentFormat.formattingString(content.description)
     }
 
     return (
@@ -113,14 +132,20 @@ const ModalServices = ({showModal, closeModal, content}) => {
                                             I have a promo code
                                         </button>
                                     ) : (
-                                        <div>
-                                            <input type="text"/>
+                                        <div className="modal-footer__promocode-input">
+                                            <input type="text" placeholder="Promocode" value={promocode} onInput={e => setPromocode(e.target.value)}/>
+                                            <button className="submit-btn promocode-btn" onClick={e => {
+                                                e.preventDefault()
+                                                setDiscount()
+                                            }}>
+                                                <ArrowForwardIosIcon/>
+                                            </button>
                                         </div>
                                     )
                                 }
                             </div>
                             <button className="modal-footer__btn">
-                                Pay {isArray ? currentService.price : content.price }$
+                                Pay { calculatePrice() }$
                             </button>
                         </form>
                     </div>
