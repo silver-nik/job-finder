@@ -51,6 +51,7 @@ const AnimatedRoutes = () => {
             </Route>
 
             <Route path="*" element={<div>Not page</div>}/>
+            <Route path="404" element={<div>Not page</div>}/>
 
             {/* <Route path="/search/vacancy/:text/:area" element={<SearchPage/>} className='page' /> */}
             <Route path="/blog/:id" element={<SingleBlogPage/>} className='page' />
