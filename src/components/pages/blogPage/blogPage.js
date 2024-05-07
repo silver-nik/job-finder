@@ -29,7 +29,7 @@ const BlogPage = () => {
                 setArr(res);
                 setActiveIndex(1);
                 setActiveDescr(res[0].description);
-            })       
+            })            
     }, [])
 
     useEffect(() => {
