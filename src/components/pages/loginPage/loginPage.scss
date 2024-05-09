@@ -1,0 +1,19 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .swap-enter__btn {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        display: flex;
+        color: #0070ff;
+        justify-content: flex-end;
+    }
+
+    .login-code {
+        display: none;
+    }
+
+}
